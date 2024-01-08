@@ -1,7 +1,7 @@
 name: lab4
 services:
   nginx:
-    image: "nginx:1.25"
+    image: "khitrovia4/nginx:1.0"
     container_name: nginx
     ports:
       - "80:80"
@@ -12,11 +12,11 @@ services:
       - flask
 
   flask:
-    image: "khitrovia4/flask:1.0"
+    # image: "khitrovia4/flask:1.0"
     build: .
     container_name: flask
     environment:
-      - FLASK_DEBUG=1
+      # - FLASK_DEBUG=1
       - SQL_DATABASE_TYPE=postgres
       - SQL_USER=flask_user
       - SQL_PASSWORD=Password!
